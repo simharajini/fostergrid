@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Validate match-engine constraints on save",
+      "trigger": "PostFileSave",
+      "matcher": "src/lib/matchEngine.ts",
+      "action": {
+        "type": "agent",
+        "prompt": "The deterministic constraint solver changed. Re-verify that it still (1) excludes fosters inside the hazard zone, (2) requires backup power for refrigerated meds, and (3) requires single-story housing for mobility needs. Flag any regression."
+      }
+    }
+  ]
+}
